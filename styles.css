@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+/* Добавление шрифта Inter */
+
+body {
+    font-family: 'Inter';
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1720px;
+    margin: 0 auto;
+    padding: 0 5% 0 5%;
+    position: relative;
+    width: 80%;
+}
+
+.header {
+    padding: 2% 0 3% 0;
+}
+  
+.header-row {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    column-gap: 1%;
+}
+
+.header-logo .title {
+    font-size: 24px;
+    padding-left: 10px;
+    padding-right: 40px;
+}
+  
+.header-logo img {
+    height: 32px;
+}
+
+.header-nav {
+    flex: 1; /* Занимать оставшееся пространство в строке */
+    margin-right: 20px; /* Расстояние между header-nav и header-lang */
+}
+
+.header-nav ul {
+    display: flex;
+    column-gap: 80px;
+    align-items: center;
+    font-size: 16px;
+    margin: 0;
+    text-transform: none;
+    list-style-type: none;
+}
+
+.header-nav a {
+    color: #aaa;
+    text-decoration: none;
+    position: relative;
+}
+
+.header-nav a::before {
+    content: '';
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background-color: #aaa;
+    transition: 0.2s;
+
+}
+
+.header-nav a:hover::before {
+    width: 100%;
+}
+
+.header-lang {
+    margin-left: auto; /* Переместить элемент вправо */
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        min-width: 600px; /* Минимальная ширина контейнера */
+    }
+}

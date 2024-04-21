@@ -69,7 +69,6 @@ body {
     height: 1px;
     background-color: #aaa;
     transition: 0.2s;
-
 }
 
 .header-nav a:hover::before {
@@ -85,3 +84,116 @@ body {
         min-width: 600px; /* Минимальная ширина контейнера */
     }
 }
+
+
+.content {
+    text-align: center;
+}
+
+.subheading {
+    font-size: 16px;
+    color: #aaa;
+    margin-top: 100px;
+    margin-bottom: 0;
+}
+
+.main-heading {
+    margin: 0;
+    font-size: 60px;
+    color: #000;
+}
+
+.description {
+    font-size: 16px;
+    color: #aaa;
+    font-weight: 500;
+}
+
+.call-to-action {
+    font-size: 16px;
+    color: #000;
+}
+
+.waitlist-container {
+    text-align: center;
+    margin-top: 50px;
+    padding: 0 32% 0 32%;
+    position: relative;
+}
+
+.waitlist-text {
+    font-size: 16px;
+    color: #000;
+    padding-right: 60%;
+    margin: 0 0 10px 0;
+}
+
+.email-input,
+.join-button {
+    display: inline-block;
+    vertical-align: top; /* Выравниваем элементы по верхнему краю */
+}
+
+.email-input {
+    display: inline-block;
+    position: relative;
+    text-align: left; /* Выравниваем текст внутри блока влево */
+}
+
+.email-field {
+    position: relative;
+
+    left: 0;
+    width: 60%;
+    height: 30px;
+    border: 1px solid #AAAAAA;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 2%;
+}
+
+.email-field::placeholder {
+    position: absolute; /* добавляем абсолютное позиционирование */
+    left: 7%; /* отступ справа от границы */
+    color: #AAAAAA;
+}
+
+
+.join-button {
+    width: 25%;
+    height: 41.6px;
+    background-color: rgba(116, 207, 155, 0.2);
+    color: #74CF9B;
+    border: 1px solid #74CF9B;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.join-button:hover {
+    background-color: #fff;
+  }
+  
+  .join-button:active {
+    transform: scale(0.95);
+  }
+
+
+.development-text {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: normal;
+    color: #aaa
+}
+
+.background-image {
+    position: absolute;
+    top: 35%; /* Немного выше текста "Join waitlist now!" */
+    left: 0;
+    z-index: -1; /* Помещаем задний план на задний план */
+    width: 100%; /* Заполняем ширину контейнера */
+    height: 100%; /* Заполняем высоту контейнера */
+    background-size: cover; /* Адаптивное заполнение контейнера */
+    background-position: center; /* Центрируем изображение */
+  }
+  

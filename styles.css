@@ -205,6 +205,10 @@ body {
     .waitlist-text {
         padding-right: 40%;
     }
+
+    .system {
+        margin-top: 30%;
+    }
 }
 
 @media (max-width: 800px) {
@@ -240,6 +244,10 @@ body {
 
     .header-nav ul {
         display: none; /* Скрыть список ссылок при ширине экрана менее 800px */
+    }
+
+    .system {
+        margin-top: 10%;
     }
 }
 

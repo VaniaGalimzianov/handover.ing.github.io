@@ -370,6 +370,15 @@ body {
         font-size: 45px;
     }
 
+    .deliver-package, .courier-package {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .package-title, .courier-title, .description {
+        font-size: 14px;
+    }
+
     
     /* .waitlist-container {
         padding: 0 15% 0 15%;

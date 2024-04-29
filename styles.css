@@ -201,13 +201,109 @@ body {
     margin-top: 25%;
 }
 
+
+/* Посылка */
+.deliver-package {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+    width: 300px;
+    height: 140px;
+    padding: 20px;
+}
+
+.deliver-package p.package-title {
+    font-weight: bold;
+    font-size: 25px;
+    margin: 10px 0 0 0;
+}
+
+.description-container {
+    width: fit-content; /* Ширина равна ширине текста */
+}
+
+.description-container p {
+    font-weight: 400;
+    color: #000;
+}
+
+.process-ways {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+
+/* Курьер */
+.courier-package {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+    opacity: 0.4;
+    width: 300px;
+    height: 140px;
+    padding: 20px;
+}
+
+.courier-package p.courier-title {
+    font-weight: bold;
+    font-size: 25px;
+    opacity: 0.5;
+    margin: 10px 0 0 0;
+}
+
+.description-container-c {
+    width: fit-content; /* Ширина равна ширине текста */
+}
+
+.description-containe-c p {
+    font-weight: 400;
+    color: #000;
+}
+
+.process-ways .deliver-package {
+    margin-right: 30px;
+}
+
+.process-ways {
+    width: 810px;
+    margin: 0 auto;
+}
+
+.process-ways .courier-package {
+    margin-right: 30px;
+}
+
+
+.process-ways .deliver-package, .process-ways .courier-package {
+    margin: 10px;
+}
+
+
+@media (max-width: 1200px) {
+    .system {
+        margin-top: 30%;
+    }
+}
+
 @media (max-width: 1000px) {
     .waitlist-text {
         padding-right: 40%;
     }
 
     .system {
-        margin-top: 30%;
+        margin-top: 10%;
+    }
+
+    .background-image {
+        display: none; /* Скрываем картинку */
+    }
+
+    .process-ways {
+        width: 730px;
     }
 }
 
@@ -231,10 +327,6 @@ body {
         width: 170px;
     }
 
-    .background-image {
-        display: none; /* Скрываем картинку */
-    }
-
     .waitlist-text {
         /* margin-right: auto;
         padding-right: 0; */
@@ -249,6 +341,19 @@ body {
     .system {
         margin-top: 10%;
     }
+
+    /* .process-ways .courier-package {
+        margin-right: 30px;
+    } */
+
+    .process-ways {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
 }
 
 
@@ -264,6 +369,8 @@ body {
     .main-heading {
         font-size: 45px;
     }
+
+    
     /* .waitlist-container {
         padding: 0 15% 0 15%;
     } */

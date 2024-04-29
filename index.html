@@ -18,7 +18,7 @@
 
                 <nav class="header-nav">
                     <ul>
-                        <li><a href="#1">About</a></li>
+                        <li><a href="#about">About</a></li>
                         <li><a href="#2">Faq</a></li>
                         <li><a href="#3">Contacts</a></li>
                     </ul>
@@ -51,8 +51,47 @@
         <p class="development-text">Service is under development now. Enter your email address,<br> so we can notify you when it will be ready 🚀</p>
         <img src="./icons/vectors.svg" alt="Background Vectors" class="background-image">
         
-        <h2 class="system">How it works?</h2>
+        <h2 class="system" id="about">How it works?</h2>
+
+        <div class="process-ways">
+            <div id="package" class="deliver-package" style="cursor: pointer;">
+                <p class="package-title">Need deliver package?</p>
+                <div class="description-container">
+                    <p class="description">Do you need to send a gift or maybe documents to another country? Just find people who fly direction you want and pass it through him</p>
+                </div>
+            </div>
+
+            <div id="courier" class="courier-package" style="cursor: pointer;">
+                <p class="courier-title">Courier?</p>
+                <div class="description-container-c">
+                    <p class="description">Going on a trip and having some free time and space on your luggage? Help people and make some money</p>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.header-nav a');
+        
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+        
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop;
+        
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        </script>        
    
 </body>
 </html>

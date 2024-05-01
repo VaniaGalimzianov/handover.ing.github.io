@@ -91,7 +91,22 @@
                 });
             });
         });
-        </script>        
-   
+        </script>
+
+        <script>
+            const blackButton = document.querySelector('.deliver-package');
+            const transparentButton = document.querySelector('.courier-package');
+
+            transparentButton.addEventListener('click', function() {
+                transparentButton.style.opacity = '1';
+                blackButton.style.opacity = '0.4';
+            });
+            
+            blackButton.addEventListener('click', function() {
+                blackButton.style.opacity = '1';
+                transparentButton.style.opacity = '0.4';
+            });
+        </script>
+
 </body>
 </html>

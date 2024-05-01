@@ -194,6 +194,7 @@ body {
     background-size: cover; /* Адаптивное заполнение контейнера */
     background-position: center; /* Центрируем изображение */
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .system {
@@ -253,31 +254,36 @@ body {
 .courier-package p.courier-title {
     font-weight: bold;
     font-size: 25px;
-    opacity: 0.5;
+    /* opacity: 0.5; */
     margin: 10px 0 0 0;
 }
 
 .description-container-c {
-    width: fit-content; /* Ширина равна ширине текста */
+    width: fit-content;
 }
 
-.description-containe-c p {
+.description-container-c p {
     font-weight: 400;
-    color: #000;
+    color: #000000;
+    opacity: 1;
 }
 
 .deliver-package:hover,
 .courier-package:hover {
     transform: scale(1.05);
-    opacity: 1;
 }
 
-.courier-package p.courier-title:hover {
+/* .courier-package p.courier-title:hover {
     opacity: 1;
-}
+} */
 
 .package-title,
 .courier-title {
+    user-select: none; /* Предотвращает выделение текста */
+}
+
+.description-container,
+.description-container-c {
     user-select: none; /* Предотвращает выделение текста */
 }
 

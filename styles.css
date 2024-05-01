@@ -211,6 +211,7 @@ body {
     width: 300px;
     height: 140px;
     padding: 20px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .deliver-package p.package-title {
@@ -246,6 +247,7 @@ body {
     width: 300px;
     height: 140px;
     padding: 20px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .courier-package p.courier-title {
@@ -262,6 +264,21 @@ body {
 .description-containe-c p {
     font-weight: 400;
     color: #000;
+}
+
+.deliver-package:hover,
+.courier-package:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.courier-package p.courier-title:hover {
+    opacity: 1;
+}
+
+.package-title,
+.courier-title {
+    user-select: none; /* Предотвращает выделение текста */
 }
 
 .process-ways .deliver-package {
@@ -305,6 +322,10 @@ body {
     .process-ways {
         width: 730px;
     }
+
+    .header-nav ul {
+        display: none; /* Скрыть список ссылок при ширине экрана менее 800px */
+    }
 }
 
 @media (max-width: 800px) {
@@ -334,12 +355,9 @@ body {
         padding-right: 0;
     }
 
-    .header-nav ul {
-        display: none; /* Скрыть список ссылок при ширине экрана менее 800px */
-    }
-
     .system {
         margin-top: 10%;
+        font-size: 30px;
     }
 
     /* .process-ways .courier-package {
@@ -377,6 +395,11 @@ body {
 
     .package-title, .courier-title, .description {
         font-size: 14px;
+    }
+
+    .deliver-package:hover,
+    .courier-package:hover {
+        transform: scale(0.95);
     }
 
     

@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>handover.ing</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="shortcut icon" href="/icons/logo.svg">
 </head>
-<body>
+<body>  
     <header class='header'>
         <div class="container">
             <div class="header-row">
@@ -68,6 +69,14 @@
                 </div>
             </div>
         </div>
+
+        <div class="process-steps">
+            <div class="image-container">
+                <img src="/icons/steps.svg" class="process-steps-icon active">
+                <img src="/icons/steps5.svg" class="process-steps5-icon">
+            </div>
+        </div>        
+
     </main>
 
     <script>
@@ -91,22 +100,52 @@
                 });
             });
         });
-        </script>
+    </script>
 
         <script>
             const blackButton = document.querySelector('.deliver-package');
             const transparentButton = document.querySelector('.courier-package');
+            const processStepsIcon = document.querySelector('.process-steps-icon');
+            const processSteps5Icon = document.querySelector('.process-steps5-icon');  
 
             transparentButton.addEventListener('click', function() {
-                transparentButton.style.opacity = '1';
-                blackButton.style.opacity = '0.4';
+                if (transparentButton.style.opacity !== '1') {
+                    transparentButton.style.opacity = '1';
+                    blackButton.style.opacity = '0.4';
+                    processSteps5Icon.style.opacity = '1';
+                    processStepsIcon.style.opacity = '0';
+                }
             });
-            
+
             blackButton.addEventListener('click', function() {
-                blackButton.style.opacity = '1';
-                transparentButton.style.opacity = '0.4';
+                if (blackButton.style.opacity !== '1') {
+                    blackButton.style.opacity = '1';
+                    transparentButton.style.opacity = '0.4';
+                    processStepsIcon.style.opacity = '1';
+                    processSteps5Icon.style.opacity = '0';
+                }
             });
         </script>
+
+        <script>
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+            
+            const userEmail = document.querySelector('.email-field');
+            const joinButton = document.querySelector('.join-button');
+
+            joinButton.addEventListener('click', function() {
+                if (isValidEmail(userEmail.value)) {
+                    alert("You have been added to the waiting-list");
+                } else {
+                    alert("Please enter the correct email address");
+                }
+            })
+        </script>
+
+
 
 </body>
 </html>

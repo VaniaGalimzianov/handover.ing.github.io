@@ -305,6 +305,47 @@ body {
     margin: 10px;
 }
 
+.process-steps {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+}
+
+
+.process-steps-icon, .process-steps5-icon {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 550px;
+    transition: opacity 0.5s;
+}
+
+.process-steps-icon {
+    top: 350px;
+    height: 550px;
+}
+
+.process-steps5-icon {
+    top: 300px;
+    height: 455px;
+    opacity: 0;
+}
+
+
+/* .process-steps-icon.active,
+.process-steps5-icon.active {
+    opacity: 1;
+}
+
+.process-steps-icon.non-active,
+.process-steps5-icon.non-ctive {
+    opacity: 0;
+} */
+
+
+
 
 @media (max-width: 1200px) {
     .system {

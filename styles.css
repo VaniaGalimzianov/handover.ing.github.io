@@ -4,9 +4,18 @@
 body {
     font-family: 'Inter';
     font-weight: bold;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
+    max-width: 1200px; /* Ширина контейнера для экрана ноутбука */
+    margin: 0 auto;
+    padding: 0 20px; /* Добавление белых полей по бокам */
+}
+
+
+.header-container {
     max-width: 1720px;
     margin: 0 auto;
     padding: 0 5% 0 5%;
@@ -323,33 +332,25 @@ body {
 }
 
 .process-steps-icon {
-    top: 350px;
+    top: 347px;
     height: 550px;
 }
 
 .process-steps5-icon {
-    top: 300px;
-    height: 455px;
+    top: 298px;
+    height: 453px;
     opacity: 0;
 }
-
-
-/* .process-steps-icon.active,
-.process-steps5-icon.active {
-    opacity: 1;
-}
-
-.process-steps-icon.non-active,
-.process-steps5-icon.non-ctive {
-    opacity: 0;
-} */
-
-
 
 
 @media (max-width: 1200px) {
     .system {
         margin-top: 30%;
+    }
+
+    .container {
+        width: 100%; /* Ширина контейнера равна ширине экрана ноутбука */
+        padding: 0; /* Убираем белые поля */
     }
 }
 

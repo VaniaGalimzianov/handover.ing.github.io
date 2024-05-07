@@ -195,12 +195,12 @@ body {
 
 .background-image {
     position: absolute;
-    top: 250px; /* Немного выше текста "Join waitlist now!" */
+    top: 250px;
     left: 0;
     z-index: -1; /* Помещаем задний план на задний план */
     width: 100%; /* Заполняем ширину контейнера */
     height: 100%; /* Заполняем высоту контейнера */
-    background-size: cover; /* Адаптивное заполнение контейнера */
+    background-size: contain; /* Адаптивное заполнение контейнера */
     background-position: center; /* Центрируем изображение */
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -316,11 +316,16 @@ body {
 
 .process-steps {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .image-container {
     position: relative;
+    flex: 1;
 }
+
+
 
 
 .process-steps-icon, .process-steps5-icon {
@@ -342,21 +347,53 @@ body {
     opacity: 0;
 }
 
-@media (max-width: 1440px) {
+.text-container {
+    max-width: 300px;
+    /* align-items: right; */
+    padding: 20px; /* Отступ внутри контейнера */
+    margin: 10px;
+    margin-top: 60px;
+    text-align: right;
+    flex: 1;
+}
+
+.text-container h3, .text-container p {
+    margin: 0;
+}
+
+.text-container h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.text-container p {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* @media screen and (max-width: 1440px) {
     .background-image {
+        display: none;
+    }
+} */
+
+@media screen and (min-width: 1536px) {
+    .background-image  {
         display: none;
     }
 }
 
-@media (max-width: 1200px) {
+@media screen and (min-width: 1536px) {
     .system {
         margin-top: 30%;
     }
 
     .container {
         width: 100%; /* Ширина контейнера равна ширине экрана ноутбука */
-        padding: 0; /* Убираем белые поля */
+        padding: 20; /* Убираем белые поля */
     }
+
+    
 }
 
 @media (max-width: 1000px) {

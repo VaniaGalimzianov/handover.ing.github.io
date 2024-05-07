@@ -342,6 +342,11 @@ body {
     opacity: 0;
 }
 
+@media (max-width: 1440px) {
+    .background-image {
+        display: none;
+    }
+}
 
 @media (max-width: 1200px) {
     .system {
@@ -359,6 +364,7 @@ body {
         text-align: center;
         padding-right: 0;
     }
+
 
     .system {
         margin-top: 10%;

@@ -73,12 +73,36 @@
 
         <div class="process-steps">
             <div class="image-container">
-                <div class="text-container">
+                <div class="text-container-right first-text">
                     <h3>Find suitable courier</h3>
                     <p>Enter source and destination place. Then choose ad with suitable date</p>
                 </div>
+                <div class="text-container-right second-text">
+                    <h3>Pay the order</h3>
+                    <p>Wait until courier accepts your request and pay for it. We will keep money safe until you successfully receive your package</p>
+                </div>
+                <div class="text-container-right third-text">
+                    <h3>Pass the parcel</h3>
+                    <p>Pass the parcel at the place and time agreed with courier</p>
+                </div>
+
                 <img src="icons/steps.svg" class="process-steps-icon active">
                 <img src="icons/steps5.svg" class="process-steps5-icon">
+            
+            </div>
+            <div class="image-container-left">
+                <div class="text-container-left forth-text">
+                    <h3>Create delivery request</h3>
+                    <p>Describe what you want to send, attach photo of it and add contacts of package transmitting and receiving side</p>
+                </div>
+                <div class="text-container-left fifth-text">
+                    <h3>Contact with courier</h3>
+                    <p>Contact with courier via application and agree on the details</p>
+                </div>
+                <div class="text-container-left sixth-text">
+                    <h3>Receive parcel</h3>
+                    <p>Receive the parcel at the place and time agreed with courier. Confirm receiving parcel in the app, so we can pass money to curier</p>
+                </div>
             </div>
         </div>
 
@@ -112,7 +136,26 @@
             const blackButton = document.querySelector('.deliver-package');
             const transparentButton = document.querySelector('.courier-package');
             const processStepsIcon = document.querySelector('.process-steps-icon');
-            const processSteps5Icon = document.querySelector('.process-steps5-icon');  
+            const processSteps5Icon = document.querySelector('.process-steps5-icon');
+
+            const firstText = document.querySelector('.text-container-right.first-text');
+            const secondText = document.querySelector('.text-container-right.second-text');
+            const thirdText = document.querySelector('.text-container-right.third-text');
+            const forthText = document.querySelector('.text-container-left.forth-text');
+            const fifthText = document.querySelector('.text-container-left.fifth-text');
+            const sixthText = document.querySelector('.text-container-left.sixth-text');
+
+            function fadeOutAndReplace(element, newHeading, newParagraph) {
+                if (element) {
+                    element.classList.add('fade-out');
+
+                    setTimeout(() => {
+                        element.querySelector('h3').textContent = newHeading;
+                        element.querySelector('p').textContent = newParagraph;
+                        element.classList.remove('fade-out');
+                    }, 500); // 500 миллисекунд - это длительность анимации
+                }
+            }
 
             transparentButton.addEventListener('click', function() {
                 if (transparentButton.style.opacity !== '1') {
@@ -120,6 +163,19 @@
                     blackButton.style.opacity = '0.4';
                     processSteps5Icon.style.opacity = '1';
                     processStepsIcon.style.opacity = '0';
+
+                    fadeOutAndReplace(firstText, 'Create ad', 'Planning a trip? Create ad for it: enter the dates and describe what you can to bring with you');
+                    fadeOutAndReplace(secondText, 'Get the parcel', `Get parcel at the place and time agreed with client`);
+                    fadeOutAndReplace(thirdText, 'Pass the parcel', 'Pass the parcel at the place and time agreed with client');
+                    fadeOutAndReplace(forthText, 'Accept the request', 'Once somebody make request we will notify you. You will see all the information about the package, including photos. You just need to accept it or decline');
+                    fadeOutAndReplace(fifthText, 'Get to the destination', 'Get to the destination country');
+                    fadeOutAndReplace(sixthText, '', '');
+                    firstText.style.display = 'block';
+                    secondText.style.display = 'block';
+                    thirdText.style.display = 'block';
+                    forthText.style.display = 'block';
+                    fifthText.style.display = 'block';
+                    sixthText.style.display = 'block';
                 }
             });
 
@@ -128,7 +184,21 @@
                     blackButton.style.opacity = '1';
                     transparentButton.style.opacity = '0.4';
                     processStepsIcon.style.opacity = '1';
+                    
                     processSteps5Icon.style.opacity = '0';
+
+                    fadeOutAndReplace(firstText, 'Find suitable courier', 'Enter source and destination place. Then choose ad with suitable date');
+                    fadeOutAndReplace(secondText, 'Pay the order', 'Wait until courier accepts your request and pay for it. We will keep money safe until you successfully receive your package');
+                    fadeOutAndReplace(thirdText, 'Pass the parcel', 'Pass the parcel at the place and time agreed with client');
+                    fadeOutAndReplace(forthText, 'Create delivery request', 'Describe what you want to send, attach photo of it and add contacts of package transmitting and receiving side');
+                    fadeOutAndReplace(fifthText, 'Contact with courier', 'Contact with courier via application and agree on the details');
+                    fadeOutAndReplace(sixthText, 'Receive parcel', 'Receive the parcel at the place and time agreed with courier. Confirm receiving parcel in the app, so we can pass money to curier');
+                    firstText.style.display = 'block';
+                    secondText.style.display = 'block';
+                    thirdText.style.display = 'block';
+                    forthText.style.display = 'block';
+                    fifthText.style.display = 'block';
+                    sixthText.style.display = 'block';
                 }
             });
         </script>

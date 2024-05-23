@@ -6,6 +6,7 @@
     <title>handover.ing</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="shortcut icon" href="/icons/logo.svg">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -21,8 +22,8 @@
                 <nav class="header-nav">
                     <ul>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#2">Faq</a></li>
-                        <li><a href="#3">Contacts</a></li>
+                        <li><a href="#faq">Faq</a></li>
+                        <li><a href="#contacts">Contacts</a></li>
                     </ul>
                 </nav>
 
@@ -105,6 +106,44 @@
                 </div>
             </div>
         </div>
+
+        <div class="faq-container">
+            <div class="faq-heading" id="faq">
+                <h2>Frequently asked questions</h2>
+            </div>
+            <div class="faq-item">
+                <h3>What if my package will be stolen?</h3>
+                <p>Dont worry, at least you have your life. Money is nothing</p>
+            </div>
+            <!-- <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What if my package will be stolen?</h3>
+                    <span class="expand">...</span>
+                </div>
+                <p class="faq-answer">Don't worry, at least you have your life. Money is nothing.</p>
+            </div> -->
+            <div class="faq-item">
+                <h3>What if my package will be stolen?</h3>
+                <p>Dont worry, at least you have your life. Money is nothing</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if my package will be stolen?</h3>
+                <p>Dont worry, at least you have your life. Money is nothing</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if my package will be stolen?</h3>
+                <p>Dont worry, at least you have your life. Money is nothing</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if my package will be stolen?</h3>
+                <p>Dont worry, at least you have your life. Money is nothing</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if my package will be stolen?</h3>
+                <p>Dont worry, at least you have your life. Money is nothing</p>
+            </div>
+        </div>
+        
 
     </main>
 </div>
@@ -203,22 +242,36 @@
             });
         </script>
 
-        <script>
-            function isValidEmail(email) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return emailRegex.test(email);
-            }
-            
-            const userEmail = document.querySelector('.email-field');
-            const joinButton = document.querySelector('.join-button');
+    <script>
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        const userEmail = document.querySelector('.email-field');
+        const joinButton = document.querySelector('.join-button');
 
-            joinButton.addEventListener('click', function() {
-                if (isValidEmail(userEmail.value)) {
-                    alert("You have been added to the waiting-list");
-                } else {
-                    alert("Please enter the correct email address");
-                }
-            })
-        </script>
+        joinButton.addEventListener('click', function() {
+            if (isValidEmail(userEmail.value)) {
+                alert("You have been added to the waiting-list");
+            } else {
+                alert("Please enter the correct email address");
+            }
+        })
+    </script>
+<script>
+    $(document).ready(function(){
+    $('.faq-question').on('click', function(){
+        $(this).parent().toggleClass('expanded');
+        var answer = $(this).parent().find('.faq-answer');
+        if (answer.css('max-height') == '0px') {
+            answer.css('max-height', answer.prop('scrollHeight') + 'px');
+        } else {
+            answer.css('max-height', '0');
+        }
+    });
+});
+
+</script>
 </body>
 </html>

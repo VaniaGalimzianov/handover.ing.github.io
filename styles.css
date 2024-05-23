@@ -422,6 +422,73 @@ body {
     margin-top: 80px;
 }
 
+
+.faq-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 100vw; */
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.faq-heading {
+    color: black;
+    width: 100%;
+    padding-top: 10px;
+    /* padding-bottom: 20px; */
+    font-size: 24px;
+}
+
+.faq-question h3 {
+    display: inline-block;
+}
+
+.faq-question span {
+    display: none;
+    /* margin: 20px; */
+}
+
+.faq-question {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* display: flex; */
+}
+
+.faq-item {
+    width: 40%; /* По умолчанию 3 элемента в строке */
+    padding: 20px 30px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 30px;
+    margin: 20px 10px;
+    background-color: white;
+    text-align: left;
+    border: 3px solid black;
+}
+
+.faq-item p {
+    font-weight: normal;
+}
+
+.faq-answer {
+    display: none; /* Скрываем ответы по умолчанию */
+    transition: max-height 0.3s ease; /* Добавляем анимацию для плавного скрытия/раскрытия */
+    max-height: 0;
+    overflow: hidden;
+}
+
+.expand {
+    cursor: pointer;
+}
+
+.expanded .faq-answer {
+    display: block; /* Показываем ответ при раскрытии */
+    max-height: 500px; /* Максимальная высота для анимации */
+}
+
+
 @media screen and (min-width: 1560px) {
     .background-image  {
         display: none;
@@ -524,6 +591,8 @@ body {
     .text-container-right p {
         display: none;
     }
+
+    
 }
 
 @media (max-width: 800px) {
@@ -531,7 +600,9 @@ body {
         margin-top: 10%;
         font-size: 30px;
     }
-
+    .faq-item {
+        width: 100%;
+    }
     /* .process-ways .courier-package {
         margin-right: 30px;
     } */
@@ -577,7 +648,28 @@ body {
     .text-container-left {
         padding-left: 0;
     }
+
+    .faq-item {
+        width: 100%;
+        border: none;
+        padding: 0px 10px;
+        margin: 0px 10px;
+    }
+
+    .faq-container {
+        border: 3px solid black;
+        border-radius: 20px;
+    }
+    
+
+    .faq-heading {
+        color: #000;
+        font-size: 20px;
+    }
+
+
 }
+
 
 @media only screen and (max-width: 400px) {
     .text-container-right h3 {

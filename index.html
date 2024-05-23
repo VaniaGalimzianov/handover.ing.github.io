@@ -130,18 +130,19 @@
                 <h3>What if my package will be stolen?</h3>
                 <p>Dont worry, at least you have your life. Money is nothing</p>
             </div>
-            <div class="faq-item">
+            <div class="faq-item last">
                 <h3>What if my package will be stolen?</h3>
                 <p>Dont worry, at least you have your life. Money is nothing</p>
             </div>
-            <div class="faq-item">
+            <div class="faq-item last">
                 <h3>What if my package will be stolen?</h3>
                 <p>Dont worry, at least you have your life. Money is nothing</p>
             </div>
-            <div class="faq-item">
+            <div class="faq-item last">
                 <h3>What if my package will be stolen?</h3>
                 <p>Dont worry, at least you have your life. Money is nothing</p>
             </div>
+            <button id="show-more-btn">Show more</button>
         </div>
         
 
@@ -260,18 +261,35 @@
         })
     </script>
 <script>
-    $(document).ready(function(){
-    $('.faq-question').on('click', function(){
-        $(this).parent().toggleClass('expanded');
-        var answer = $(this).parent().find('.faq-answer');
-        if (answer.css('max-height') == '0px') {
-            answer.css('max-height', answer.prop('scrollHeight') + 'px');
-        } else {
-            answer.css('max-height', '0');
-        }
+    document.addEventListener("DOMContentLoaded", function() {
+        const faqItems = document.querySelectorAll(".last");
+        const showMoreBtn = document.getElementById("show-more-btn");
+    
+        let isExpanded = false;
+    
+        const toggleContent = () => {
+            faqItems.forEach((item, index) => {
+                item.classList.toggle("expanded");
+            });
+    
+            showMoreBtn.textContent = isExpanded ? "Show more" : "Show less";
+            isExpanded = !isExpanded;
+        };
+    
+        showMoreBtn.addEventListener("click", toggleContent);
     });
-});
-
 </script>
+
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const showMoreBtn = document.getElementById("show-more-btn");
+    
+        showMoreBtn.classList.add("show-more-text");
+    
+        setTimeout(() => {
+            showMoreBtn.classList.add("show");
+        }, 1000); // Добавляем задержку для анимации появления
+    });
+    </script> -->
 </body>
 </html>

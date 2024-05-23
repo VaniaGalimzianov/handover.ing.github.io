@@ -429,6 +429,7 @@ body {
     /* width: 100vw; */
     justify-content: center;
     box-sizing: border-box;
+    position: relative;
 }
 
 .faq-heading {
@@ -488,6 +489,9 @@ body {
     max-height: 500px; /* Максимальная высота для анимации */
 }
 
+#show-more-btn {
+    display: none;
+}
 
 @media screen and (min-width: 1560px) {
     .background-image  {
@@ -656,15 +660,54 @@ body {
         margin: 0px 10px;
     }
 
+    #show-more-btn {
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+        background-color: white;
+        border: 1px solid white;
+        padding: 5px 10px;
+        border-radius: 7px;
+        cursor: pointer;
+        font-family: "Inter";
+    }
+
+    #show-more-btn:hover {
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+        /* transform: scale(0.85); */
+    }
+
+    .show-more-text {
+        opacity: 0;
+    }
+    
+    .show-more-text.show {
+        opacity: 1;
+    }
+
     .faq-container {
         border: 3px solid black;
         border-radius: 20px;
+        padding-bottom: 30px;
     }
     
 
     .faq-heading {
         color: #000;
         font-size: 20px;
+    }
+
+    .last {
+        /* display: none; */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s cubic-bezier(0.77, 0, 0.175, 1);    }
+
+    .expanded {
+        max-height: 1000px; /* Укажите желаемую максимальную высоту */
     }
 
 

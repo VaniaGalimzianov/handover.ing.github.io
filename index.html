@@ -108,20 +108,13 @@
         </div>
 
         <div class="faq-container">
-            <div class="faq-heading" id="faq">
-                <h2>Frequently asked questions</h2>
+            <div class="faq-heading">
+                <h2 id="faq">Frequently asked questions</h2>
             </div>
             <div class="faq-item">
                 <h3>What if my package will be stolen?</h3>
                 <p>Dont worry, at least you have your life. Money is nothing</p>
             </div>
-            <!-- <div class="faq-item">
-                <div class="faq-question">
-                    <h3>What if my package will be stolen?</h3>
-                    <span class="expand">...</span>
-                </div>
-                <p class="faq-answer">Don't worry, at least you have your life. Money is nothing.</p>
-            </div> -->
             <div class="faq-item">
                 <h3>What if my package will be stolen?</h3>
                 <p>Dont worry, at least you have your life. Money is nothing</p>
@@ -138,7 +131,7 @@
                 <h3>What if my package will be stolen?</h3>
                 <p>Dont worry, at least you have your life. Money is nothing</p>
             </div>
-            <div class="faq-item last">
+            <div class="faq-item last" id="contacts">
                 <h3>What if my package will be stolen?</h3>
                 <p>Dont worry, at least you have your life. Money is nothing</p>
             </div>
@@ -149,28 +142,28 @@
     </main>
 </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.header-nav a');
-        
-            navLinks.forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-        
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        const offsetTop = targetElement.offsetTop;
-        
-                        window.scrollTo({
-                            top: offsetTop,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.header-nav a');
+
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+
+                    window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
-    </script>
+    });
+</script>
 
         <script>
             const blackButton = document.querySelector('.deliver-package');

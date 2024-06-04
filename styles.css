@@ -466,7 +466,7 @@ body {
     margin: 20px 10px;
     background-color: white;
     text-align: left;
-    border: 3px solid black;
+    border: 2px solid black;
 }
 
 .faq-item p {
@@ -680,6 +680,12 @@ body {
         /* transform: scale(0.85); */
     }
 
+    #show-more-btn:active {
+        background-color: white;
+        color: black;
+        border: 1px solid white;
+    }
+
     .show-more-text {
         opacity: 0;
     }
@@ -689,7 +695,7 @@ body {
     }
 
     .faq-container {
-        border: 3px solid black;
+        border: 2px solid black;
         border-radius: 20px;
         padding-bottom: 30px;
     }

@@ -15,8 +15,8 @@
             <div class="header-row">
 
                 <div class="header-logo">
-                    <img src="icons/logo.svg" alt="Logo" class="logo" />
-                    <span class="title">handover.ing</span>
+                    <a href="index.html"><img src="icons/logo.svg" alt="Logo" class="logo" /></a>
+                    <a href="index.html"><span class="title">handover.ing</span></a>
                 </div>
 
                 <nav class="header-nav">
@@ -35,6 +35,18 @@
         </div>
 
     </header>
+    <div class="alerts-container">
+        <div class="success-alert custom-alert">
+            <p>You have been added to the waiting-list</p>
+            <button onclick="closeAlert()"><img src="icons/x.svg" alt="X"></button>
+        </div>
+    
+        <div class="error-alert custom-alert">
+            <p>Please enter the correct email address</p>
+            <button onclick="closeAlert()"><img src="icons/x.svg" alt="X"></button>
+        </div>
+    </div>
+    
 
     <main class="content">
         <div class="banner">
@@ -137,10 +149,40 @@
             </div>
             <button id="show-more-btn">Show more</button>
         </div>
-        
 
+        <div class="banner banner-bottom">
+            <div class="banner-heading">
+                <h1 class="main-heading-bottom">Register today and get notified first!</h1>
+            </div>
+            <p class="description">Simple service to deliver your <br> packages safely and fast by ordinary <br> people around the world</p>
+        </div>
+        
+        <div class="waitlist-container">
+            <p class="waitlist-text">Join waitlist now!</p>
+            <input type="email" placeholder="Enter your email" class="email-field">
+            <button class="join-button">Join waitlist</button>
+        </div>
+
+        <p class="development-text">Service is under development now. Enter your email address,<br> so we can notify you when it will be ready 🚀</p>
+        <img src="./icons/vectors.svg" alt="Background Vectors" class="background-image">
     </main>
+
+
 </div>
+<footer>
+        <div class="footer-content">
+            <h3 class="footer-h"><a href="index.html">handover.ing</a></h3>
+            <p class="footer-disc">COMMUNITY DRIVEN DELIVERIES</p>
+            <ul class="socials">
+                <li><a href="https://t.me/shumgorodoff"><img src="icons/whatsapp-logo.svg" alt="whatsapp" class="whatsapp"/></a></li>
+                <li><a href="https://t.me/endless_lemniscate"><img src="icons/telegram.svg" alt="telegram" class="telegram"/></a></li>
+                <li><a href="mailto:vaniagalimzianov@gmail.com?subject=HANDOVER.ING"><img src="icons/envelope-fill.svg" alt="whatsapp" class="whatsapp"/></a></li>
+            </ul>
+            <div class="footer-bottom">
+                <p class="copyright">©2023 Handovering. All rights reserved.</p>
+            </div>
+        </div>
+</footer>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -165,94 +207,101 @@
     });
 </script>
 
-        <script>
-            const blackButton = document.querySelector('.deliver-package');
-            const transparentButton = document.querySelector('.courier-package');
-            const processStepsIcon = document.querySelector('.process-steps-icon');
-            const processSteps5Icon = document.querySelector('.process-steps5-icon');
+<script>
+    const blackButton = document.querySelector('.deliver-package');
+    const transparentButton = document.querySelector('.courier-package');
+    const processStepsIcon = document.querySelector('.process-steps-icon');
+    const processSteps5Icon = document.querySelector('.process-steps5-icon');
 
-            const firstText = document.querySelector('.text-container-right.first-text');
-            const secondText = document.querySelector('.text-container-right.second-text');
-            const thirdText = document.querySelector('.text-container-right.third-text');
-            const forthText = document.querySelector('.text-container-left.forth-text');
-            const fifthText = document.querySelector('.text-container-left.fifth-text');
-            const sixthText = document.querySelector('.text-container-left.sixth-text');
+    const firstText = document.querySelector('.text-container-right.first-text');
+    const secondText = document.querySelector('.text-container-right.second-text');
+    const thirdText = document.querySelector('.text-container-right.third-text');
+    const forthText = document.querySelector('.text-container-left.forth-text');
+    const fifthText = document.querySelector('.text-container-left.fifth-text');
+    const sixthText = document.querySelector('.text-container-left.sixth-text');
 
-            function fadeOutAndReplace(element, newHeading, newParagraph) {
-                if (element) {
-                    element.classList.add('fade-out');
+    function fadeOutAndReplace(element, newHeading, newParagraph) {
+        if (element) {
+            element.classList.add('fade-out');
 
-                    setTimeout(() => {
-                        element.querySelector('h3').textContent = newHeading;
-                        element.querySelector('p').textContent = newParagraph;
-                        element.classList.remove('fade-out');
-                    }, 500); // 500 миллисекунд - это длительность анимации
-                }
-            }
-
-            transparentButton.addEventListener('click', function() {
-                if (transparentButton.style.opacity !== '1') {
-                    transparentButton.style.opacity = '1';
-                    blackButton.style.opacity = '0.4';
-                    processSteps5Icon.style.opacity = '1';
-                    processStepsIcon.style.opacity = '0';
-
-                    fadeOutAndReplace(firstText, 'Create ad', 'Planning a trip? Create ad for it: enter the dates and describe what you can to bring with you');
-                    fadeOutAndReplace(secondText, 'Get the parcel', `Get parcel at the place and time agreed with client`);
-                    fadeOutAndReplace(thirdText, 'Pass the parcel', 'Pass the parcel at the place and time agreed with client');
-                    fadeOutAndReplace(forthText, 'Accept the request', 'Once somebody make request we will notify you. You will see all the information about the package, including photos. You just need to accept it or decline');
-                    fadeOutAndReplace(fifthText, 'Get to the destination', 'Get to the destination country');
-                    fadeOutAndReplace(sixthText, '', '');
-                    firstText.style.display = 'block';
-                    secondText.style.display = 'block';
-                    thirdText.style.display = 'block';
-                    forthText.style.display = 'block';
-                    fifthText.style.display = 'block';
-                    sixthText.style.display = 'block';
-                }
-            });
-
-            blackButton.addEventListener('click', function() {
-                if (blackButton.style.opacity !== '1') {
-                    blackButton.style.opacity = '1';
-                    transparentButton.style.opacity = '0.4';
-                    processStepsIcon.style.opacity = '1';
-                    
-                    processSteps5Icon.style.opacity = '0';
-
-                    fadeOutAndReplace(firstText, 'Find suitable courier', 'Enter source and destination place. Then choose ad with suitable date');
-                    fadeOutAndReplace(secondText, 'Pay the order', 'Wait until courier accepts your request and pay for it. We will keep money safe until you successfully receive your package');
-                    fadeOutAndReplace(thirdText, 'Pass the parcel', 'Pass the parcel at the place and time agreed with client');
-                    fadeOutAndReplace(forthText, 'Create delivery request', 'Describe what you want to send, attach photo of it and add contacts of package transmitting and receiving side');
-                    fadeOutAndReplace(fifthText, 'Contact with courier', 'Contact with courier via application and agree on the details');
-                    fadeOutAndReplace(sixthText, 'Receive parcel', 'Receive the parcel at the place and time agreed with courier. Confirm receiving parcel in the app, so we can pass money to curier');
-                    firstText.style.display = 'block';
-                    secondText.style.display = 'block';
-                    thirdText.style.display = 'block';
-                    forthText.style.display = 'block';
-                    fifthText.style.display = 'block';
-                    sixthText.style.display = 'block';
-                }
-            });
-        </script>
-
-    <script>
-        function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
+            setTimeout(() => {
+                element.querySelector('h3').textContent = newHeading;
+                element.querySelector('p').textContent = newParagraph;
+                element.classList.remove('fade-out');
+            }, 500); // 500 миллисекунд - это длительность анимации
         }
-        
-        const userEmail = document.querySelector('.email-field');
-        const joinButton = document.querySelector('.join-button');
+    }
 
-        joinButton.addEventListener('click', function() {
-            if (isValidEmail(userEmail.value)) {
-                alert("You have been added to the waiting-list");
-            } else {
-                alert("Please enter the correct email address");
-            }
-        })
-    </script>
+    transparentButton.addEventListener('click', function() {
+        if (transparentButton.style.opacity !== '1') {
+            transparentButton.style.opacity = '1';
+            blackButton.style.opacity = '0.4';
+            processSteps5Icon.style.opacity = '1';
+            processStepsIcon.style.opacity = '0';
+
+            fadeOutAndReplace(firstText, 'Create ad', 'Planning a trip? Create ad for it: enter the dates and describe what you can to bring with you');
+            fadeOutAndReplace(secondText, 'Get the parcel', `Get parcel at the place and time agreed with client`);
+            fadeOutAndReplace(thirdText, 'Pass the parcel', 'Pass the parcel at the place and time agreed with client');
+            fadeOutAndReplace(forthText, 'Accept the request', 'Once somebody make request we will notify you. You will see all the information about the package, including photos. You just need to accept it or decline');
+            fadeOutAndReplace(fifthText, 'Get to the destination', 'Get to the destination country');
+            fadeOutAndReplace(sixthText, '', '');
+            firstText.style.display = 'block';
+            secondText.style.display = 'block';
+            thirdText.style.display = 'block';
+            forthText.style.display = 'block';
+            fifthText.style.display = 'block';
+            sixthText.style.display = 'block';
+        }
+    });
+
+    blackButton.addEventListener('click', function() {
+        if (blackButton.style.opacity !== '1') {
+            blackButton.style.opacity = '1';
+            transparentButton.style.opacity = '0.4';
+            processStepsIcon.style.opacity = '1';
+            
+            processSteps5Icon.style.opacity = '0';
+
+            fadeOutAndReplace(firstText, 'Find suitable courier', 'Enter source and destination place. Then choose ad with suitable date');
+            fadeOutAndReplace(secondText, 'Pay the order', 'Wait until courier accepts your request and pay for it. We will keep money safe until you successfully receive your package');
+            fadeOutAndReplace(thirdText, 'Pass the parcel', 'Pass the parcel at the place and time agreed with client');
+            fadeOutAndReplace(forthText, 'Create delivery request', 'Describe what you want to send, attach photo of it and add contacts of package transmitting and receiving side');
+            fadeOutAndReplace(fifthText, 'Contact with courier', 'Contact with courier via application and agree on the details');
+            fadeOutAndReplace(sixthText, 'Receive parcel', 'Receive the parcel at the place and time agreed with courier. Confirm receiving parcel in the app, so we can pass money to curier');
+            firstText.style.display = 'block';
+            secondText.style.display = 'block';
+            thirdText.style.display = 'block';
+            forthText.style.display = 'block';
+            fifthText.style.display = 'block';
+            sixthText.style.display = 'block';
+        }
+    });
+</script>
+
+<script>
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    const userEmail = document.querySelector('.email-field');
+    const joinButton = document.querySelector('.join-button');
+    const s_alert = document.querySelector('.success-alert');
+    const e_alert = document.querySelector('.error-alert');
+
+    joinButton.addEventListener('click', function() {
+        if (isValidEmail(userEmail.value)) {
+            e_alert.style.display = 'none';
+            s_alert.style.display = 'flex';
+            // alert("You have been added to the waiting-list");
+        } else {
+            s_alert.style.display = 'none';
+            e_alert.style.display = 'flex';
+            // alert("Please enter the correct email address");
+        }
+    })
+</script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const faqItems = document.querySelectorAll(".last");
@@ -273,16 +322,14 @@
     });
 </script>
 
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const showMoreBtn = document.getElementById("show-more-btn");
-    
-        showMoreBtn.classList.add("show-more-text");
-    
-        setTimeout(() => {
-            showMoreBtn.classList.add("show");
-        }, 1000); // Добавляем задержку для анимации появления
-    });
-    </script> -->
+<script>
+    function closeAlert() {
+        const s_alert = document.querySelector('.success-alert');
+        const e_alert = document.querySelector('.error-alert');
+        s_alert.style.display = 'none';
+        e_alert.style.display = 'none';
+    }
+</script>
+
 </body>
 </html>

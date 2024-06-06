@@ -156,10 +156,17 @@ body {
     color: #000;
 }
 
+.desc-container  {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
 .description {
     font-size: 16px;
     color: #aaa;
     font-weight: 500;
+    width: 300px;
 }
 
 .call-to-action {

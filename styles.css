@@ -206,8 +206,8 @@ body {
 }
 
 .email-field::placeholder {
-    position: absolute; /* добавляем абсолютное позиционирование */
-    left: 7%; /* отступ справа от границы */
+    position: absolute;
+    left: 7%;
     color: #AAAAAA;
 }
 
@@ -231,6 +231,12 @@ body {
     transform: scale(0.95);
   }
 
+.about-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
 
 .development-text {
     text-align: center;
@@ -239,6 +245,7 @@ body {
     color: #aaa;
     white-space: pre-line;
     word-break: break-word;
+    width: 500px;
 }
 
 .background-image {
@@ -471,6 +478,7 @@ body {
 }
 
 
+
 .faq-container {
     display: flex;
     flex-wrap: wrap;
@@ -562,7 +570,7 @@ footer {
     width: 100%;
     padding-top: 20px;
     color: #fff;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
 }
 
 .footer-content {

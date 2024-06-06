@@ -52,18 +52,17 @@
         <div class="banner">
             <h2 class="subheading">COMMUNITY DRIVEN DELIVERIES</h2>
             <h1 class="main-heading">handover.ing</h1>
-            <p class="description">Simple service to deliver your <br> packages safely and fast by ordinary <br> people around the world</p>
+            <p class="description">Simple service to deliver your packages safely and fast by ordinary people around the world</p>
         </div>
         
         <div class="waitlist-container">
             <p class="waitlist-text">Join waitlist now!</p>
-            <!-- <div class="email-input"> -->
             <input type="email" placeholder="Enter your email" class="email-field">
             <button class="join-button">Join waitlist</button>
-            <!-- </div> -->
         </div>
-
-        <p class="development-text">Service is under development now. Enter your email address,<br> so we can notify you when it will be ready 🚀</p>
+        <div class="about-container">
+            <p class="development-text">Service is under development now. Enter your email address, so we can notify you when it will be ready 🚀</p>
+        </div>
         <img src="./icons/vectors.svg" alt="Background Vectors" class="background-image">
         
         <h2 class="system" id="about">How does it work?</h2>
@@ -143,7 +142,7 @@
                 <h3>What if my package will be stolen?</h3>
                 <p>Dont worry, at least you have your life. Money is nothing</p>
             </div>
-            <div class="faq-item last" id="contacts">
+            <div class="faq-item last">
                 <h3>What if my package will be stolen?</h3>
                 <p>Dont worry, at least you have your life. Money is nothing</p>
             </div>
@@ -159,19 +158,22 @@
         
         <div class="waitlist-container">
             <p class="waitlist-text">Join waitlist now!</p>
-            <input type="email" placeholder="Enter your email" class="email-field">
-            <button class="join-button">Join waitlist</button>
+            <input type="email" placeholder="Enter your email" class="email-field email-bottom">
+            <button class="join-button join-bottom">Join waitlist</button>
         </div>
 
-        <p class="development-text">Service is under development now. Enter your email address,<br> so we can notify you when it will be ready 🚀</p>
+        <div class="about-container">
+            <p class="development-text">Service is under development now. Enter your email address, so we can notify you when it will be ready 🚀</p>
+        </div>
         <img src="./icons/vectors.svg" alt="Background Vectors" class="background-image">
     </main>
+</div>
 
-
+    
 </div>
 <footer>
         <div class="footer-content">
-            <h3 class="footer-h"><a href="index.html">handover.ing</a></h3>
+            <h3 class="footer-h" id="contacts"><a href="index.html">handover.ing</a></h3>
             <p class="footer-disc">COMMUNITY DRIVEN DELIVERIES</p>
             <ul class="socials">
                 <li><a href="https://t.me/shumgorodoff"><img src="icons/whatsapp-logo.svg" alt="whatsapp" class="whatsapp"/></a></li>
@@ -288,6 +290,8 @@
     const joinButton = document.querySelector('.join-button');
     const s_alert = document.querySelector('.success-alert');
     const e_alert = document.querySelector('.error-alert');
+    const userEmailBtm = document.querySelector('.email-bottom');
+    const joinButtonBtm = document.querySelector('.join-bottom');
 
     joinButton.addEventListener('click', function() {
         if (isValidEmail(userEmail.value)) {
@@ -299,7 +303,19 @@
             e_alert.style.display = 'flex';
             // alert("Please enter the correct email address");
         }
-    })
+    });
+
+    joinButtonBtm.addEventListener('click', function() {
+        if (isValidEmail(userEmailBtm.value)) {
+            e_alert.style.display = 'none';
+            s_alert.style.display = 'flex';
+            // alert("You have been added to the waiting-list");
+        } else {
+            s_alert.style.display = 'none';
+            e_alert.style.display = 'flex';
+            // alert("Please enter the correct email address");
+        }
+    });
 </script>
 
 <script>

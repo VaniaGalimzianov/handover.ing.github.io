@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="shortcut icon" href="/icons/logo.svg">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="module" src="lang.js"></script>
+    <script type="module" src="app.js"></script>
 </head>
 <body>
 <div class="container">
@@ -21,28 +23,35 @@
 
                 <nav class="header-nav">
                     <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#faq">Faq</a></li>
-                        <li><a href="#contacts">Contacts</a></li>
+                        <li><a href="#about" class="lng-link-about">About</a></li>
+                        <li><a href="#faq" class="lng-link-faq">Faq</a></li>
+                        <li><a href="#contacts" class="lng-link-contacts">Contacts</a></li>
                     </ul>
                 </nav>
+                <span>En</span>
 
                 <div class="header-lang">
-                    <span>Eng</span>
+                    <label class="switch">
+                        <input type="checkbox" class="lang-switch">
+                        <span class="slider round"></span>
+                    </label>
                 </div>
+
+                <span>Рус</span>
 
             </div>
         </div>
 
     </header>
+    <div class="overlay"></div>
     <div class="alerts-container">
         <div class="success-alert custom-alert">
-            <p>You have been added to the waiting-list</p>
+            <p class="lng-success-alert">You have been added to the waiting-list</p>
             <button onclick="closeAlert()"><img src="icons/x.svg" alt="X"></button>
         </div>
     
         <div class="error-alert custom-alert">
-            <p>Please enter the correct email address</p>
+            <p class="lng-error-alert">Please enter the correct email address</p>
             <button onclick="closeAlert()"><img src="icons/x.svg" alt="X"></button>
         </div>
     </div>
@@ -53,34 +62,34 @@
             <h2 class="subheading">COMMUNITY DRIVEN DELIVERIES</h2>
             <h1 class="main-heading">handover.ing</h1>
             <div class="desc-container">
-                <p class="description">Simple service to deliver your packages safely and fast by ordinary people around the world</p>
+                <p class="description lng-description">Simple service to deliver your packages safely and fast by ordinary people around the world</p>
             </div>
         </div>
         
         <div class="waitlist-container">
-            <p class="waitlist-text">Join waitlist now!</p>
+            <p class="waitlist-text lng-waitlist-text">Join waitlist now!</p>
             <input type="email" placeholder="Enter your email" class="email-field">
-            <button class="join-button">Join waitlist</button>
+            <button class="join-button lng-join-button">Join waitlist</button>
         </div>
         <div class="about-container">
-            <p class="development-text">Service is under development now. Enter your email address, so we can notify you when it will be ready 🚀</p>
+            <p class="development-text lng-development-text">Service is under development now. Enter your email address, so we can notify you when it will be ready🚀</p>
         </div>
         <img src="./icons/vectors.svg" alt="Background Vectors" class="background-image">
         
-        <h2 class="system" id="about">How does it work?</h2>
+        <h2 class="system lng-system" id="about">How does it work?</h2>
 
         <div class="process-ways">
             <div id="package" class="deliver-package" style="cursor: pointer;">
-                <p class="package-title">Need deliver package?</p>
+                <p class="package-title lng-package-title">Need deliver package?</p>
                 <div class="description-container">
-                    <p class="description">Do you need to send a gift or maybe documents to another country? Just find people who fly direction you want and pass it through him</p>
+                    <p class="description lng-description-package">Need to send a gift or perhaps documents to another country? Just find people who fly in the direction you want and send it through them</p>
                 </div>
             </div>
 
             <div id="courier" class="courier-package" style="cursor: pointer;">
-                <p class="courier-title">Courier?</p>
+                <p class="courier-title lng-courier-title">Courier?</p>
                 <div class="description-container-c">
-                    <p class="description">Going on a trip and having some free time and space on your luggage? Help people and make some money</p>
+                    <p class="description lng-description-courier">Going on a trip and have some free time and space in your luggage? Help people and earn some money</p>
                 </div>
             </div>
         </div>
@@ -88,16 +97,16 @@
         <div class="process-steps">
             <div class="image-container">
                 <div class="text-container-right first-text">
-                    <h3>Find suitable courier</h3>
-                    <p>Enter source and destination place. Then choose ad with suitable date</p>
+                    <h3 class="lng-first-item-h">Find suitable courier</h3>
+                    <p class="lng-first-item-p">Enter start and destination. Then select ad with suitable date</p>
                 </div>
                 <div class="text-container-right second-text">
-                    <h3>Pay the order</h3>
-                    <p>Wait until courier accepts your request and pay for it. We will keep money safe until you successfully receive your package</p>
+                    <h3 class="lng-third-item-h">Pay the order</h3>
+                    <p class="lng-third-item-p">Wait until courier accepts your request and pay for it. We will keep money safe until you successfully receive your package</p>
                 </div>
                 <div class="text-container-right third-text">
-                    <h3>Pass the parcel</h3>
-                    <p>Pass the parcel at the place and time agreed with courier</p>
+                    <h3 class="lng-fifth-item-h">Pass the parcel</h3>
+                    <p class="lng-fifth-item-p">Hand over the parcel at the place and time agreed with the courier</p>
                 </div>
 
                 <img src="icons/steps.svg" class="process-steps-icon active">
@@ -106,75 +115,74 @@
             </div>
             <div class="image-container-left">
                 <div class="text-container-left forth-text">
-                    <h3>Create delivery request</h3>
-                    <p>Describe what you want to send, attach photo of it and add contacts of package transmitting and receiving side</p>
+                    <h3 class="lng-second-item-h">Create delivery request</h3>
+                    <p class="lng-second-item-p">Describe what you want to send. Attach a photo of it and add the contact details of the sender and recipient</p>
                 </div>
                 <div class="text-container-left fifth-text">
-                    <h3>Contact with courier</h3>
-                    <p>Contact with courier via application and agree on the details</p>
+                    <h3 class="lng-forth-item-h">Contact with courier</h3>
+                    <p class="lng-forth-item-p">Contact courier via application and agree details</p>
                 </div>
                 <div class="text-container-left sixth-text">
-                    <h3>Receive parcel</h3>
-                    <p>Receive the parcel at the place and time agreed with courier. Confirm receiving parcel in the app, so we can pass money to curier</p>
+                    <h3 class="lng-sixth-item-h">Receive the parcel</h3>
+                    <p class="lng-sixth-item-p">Receive the parcel at the location and time agreed with the courier. Confirm receipt of parcel in the app so we can transfer money to courier</p>
                 </div>
             </div>
         </div>
 
         <div class="faq-container">
             <div class="faq-heading">
-                <h2 id="faq">Frequently asked questions</h2>
+                <h2 id="faq" class="lng-faq-title">Frequently asked questions</h2>
             </div>
             <div class="faq-item">
-                <h3>What if my package will be stolen?</h3>
-                <p>Dont worry, at least you have your life. Money is nothing</p>
+                <h3 class="lng-first-faq-h">What if my package will be stolen?</h3>
+                <p class="lng-first-faq-p">Don't worry, at least you have your life. Money is nothing</p>
             </div>
             <div class="faq-item">
-                <h3>What if my package will be stolen?</h3>
-                <p>Dont worry, at least you have your life. Money is nothing</p>
+                <h3 class="lng-second-faq-h">What if my package will be stolen?</h3>
+                <p class="lng-second-faq-p">Don't worry, at least you have your life. Money is nothing</p>
             </div>
             <div class="faq-item">
-                <h3>What if my package will be stolen?</h3>
-                <p>Dont worry, at least you have your life. Money is nothing</p>
+                <h3 class="lng-third-faq-h">What if my package will be stolen?</h3>
+                <p class="lng-third-faq-p">Don't worry, at least you have your life. Money is nothing</p>
             </div>
             <div class="faq-item last">
-                <h3>What if my package will be stolen?</h3>
-                <p>Dont worry, at least you have your life. Money is nothing</p>
+                <h3 class="lng-forth-faq-h">What if my package will be stolen?</h3>
+                <p class="lng-forth-faq-p">Don't worry, at least you have your life. Money is nothing</p>
             </div>
             <div class="faq-item last">
-                <h3>What if my package will be stolen?</h3>
-                <p>Dont worry, at least you have your life. Money is nothing</p>
+                <h3 class="lng-fifth-faq-h">What if my package will be stolen?</h3>
+                <p class="lng-fifth-faq-p">Don't worry, at least you have your life. Money is nothing</p>
             </div>
             <div class="faq-item last">
-                <h3>What if my package will be stolen?</h3>
-                <p>Dont worry, at least you have your life. Money is nothing</p>
+                <h3 class="lng-sixth-faq-h">What if my package will be stolen?</h3>
+                <p class="lng-sixth-faq-p">Don't worry, at least you have your life. Money is nothing</p>
             </div>
-            <button id="show-more-btn">Show more</button>
+            <button id="show-more-btn" class="lng-show-more-btn">Show more</button>
         </div>
 
         <div class="banner banner-bottom">
             <div class="banner-heading">
-                <h1 class="main-heading-bottom">Register today and get notified first!</h1>
+                <h1 class="main-heading-bottom lng-main-heading-bottom">Register today and get notified first!</h1>
             </div>
             <div class="desc-container">
-                <p class="description">Simple service to deliver your packages safely and fast by ordinary people around the world</p>
+                <p class="description lng-description-bottom">Simple service to deliver your packages safely and fast by ordinary people around the world</p>
             </div>
         </div>
         
         <div class="waitlist-container">
-            <p class="waitlist-text">Join waitlist now!</p>
+            <p class="waitlist-text lng-waitlist-text-bottom">Join waitlist now!</p>
             <input type="email" placeholder="Enter your email" class="email-field email-bottom">
-            <button class="join-button join-bottom">Join waitlist</button>
+            <button class="join-button join-bottom lng-join-button-bottom">Join waitlist</button>
         </div>
 
         <div class="about-container">
-            <p class="development-text">Service is under development now. Enter your email address, so we can notify you when it will be ready 🚀</p>
+            <p class="development-text lng-development-text-bottom">Service is under development now. Enter your email address, so we can notify you when it will be ready🚀</p>
         </div>
         <img src="./icons/vectors.svg" alt="Background Vectors" class="background-image">
     </main>
 </div>
 
     
-</div>
 <footer>
         <div class="footer-content">
             <h3 class="footer-h" id="contacts"><a href="index.html">handover.ing</a></h3>
@@ -185,7 +193,7 @@
                 <li><a href="mailto:vaniagalimzianov@gmail.com?subject=HANDOVER.ING"><img src="icons/envelope-fill.svg" alt="whatsapp" class="whatsapp"/></a></li>
             </ul>
             <div class="footer-bottom">
-                <p class="copyright">©2023 Handovering. All rights reserved.</p>
+                <p class="copyright lng-copyright">©2023 Handovering. All rights reserved.</p>
             </div>
         </div>
 </footer>
@@ -307,6 +315,7 @@
             e_alert.style.display = 'flex';
             // alert("Please enter the correct email address");
         }
+        document.querySelector('.overlay').style.display = 'block';
     });
 
     joinButtonBtm.addEventListener('click', function() {
@@ -318,7 +327,9 @@
             s_alert.style.display = 'none';
             e_alert.style.display = 'flex';
             // alert("Please enter the correct email address");
-        }
+        };
+
+        document.querySelector('.overlay').style.display = 'block';
     });
 </script>
 
@@ -348,6 +359,7 @@
         const e_alert = document.querySelector('.error-alert');
         s_alert.style.display = 'none';
         e_alert.style.display = 'none';
+        document.querySelector('.overlay').style.display = 'none';
     }
 </script>
 

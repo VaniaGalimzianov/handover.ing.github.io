@@ -82,14 +82,14 @@
             <div id="package" class="deliver-package" style="cursor: pointer;">
                 <p class="package-title lng-package-title">Need deliver package?</p>
                 <div class="description-container">
-                    <p class="description lng-description-package">Need to send a gift or perhaps documents to another country? Just find people who fly in the direction you want and send it through them</p>
+                    <p class="description-p lng-description-package">Need to send a gift or perhaps documents to another country? Just find people who fly in the direction you want and send it through them</p>
                 </div>
             </div>
 
             <div id="courier" class="courier-package" style="cursor: pointer;">
                 <p class="courier-title lng-courier-title">Courier?</p>
                 <div class="description-container-c">
-                    <p class="description lng-description-courier">Going on a trip and have some free time and space in your luggage? Help people and earn some money</p>
+                    <p class="description-p lng-description-courier">Going on a trip and have some free time and space in your luggage? Help people and earn some money</p>
                 </div>
             </div>
         </div>
@@ -234,6 +234,8 @@
     const fifthText = document.querySelector('.text-container-left.fifth-text');
     const sixthText = document.querySelector('.text-container-left.sixth-text');
 
+    const langSwitch = document.querySelector(".lang-switch");
+
     function fadeOutAndReplace(element, newHeading, newParagraph) {
         if (element) {
             element.classList.add('fade-out');
@@ -253,12 +255,22 @@
             processSteps5Icon.style.opacity = '1';
             processStepsIcon.style.opacity = '0';
 
-            fadeOutAndReplace(firstText, 'Create ad', 'Planning a trip? Create ad for it: enter the dates and describe what you can to bring with you');
-            fadeOutAndReplace(secondText, 'Get the parcel', `Get parcel at the place and time agreed with client`);
-            fadeOutAndReplace(thirdText, 'Pass the parcel', 'Pass the parcel at the place and time agreed with client');
-            fadeOutAndReplace(forthText, 'Accept the request', 'Once somebody make request we will notify you. You will see all the information about the package, including photos. You just need to accept it or decline');
-            fadeOutAndReplace(fifthText, 'Get to the destination', 'Get to the destination country');
-            fadeOutAndReplace(sixthText, '', '');
+            if (langSwitch.checked) {
+                fadeOutAndReplace(firstText, 'Создайте объявление', 'Планируете поездку? Создайте объявление: укажите даты и опишите, что вы можете взять с собой');
+                fadeOutAndReplace(secondText, 'Получите посылку', 'Заберите посылку в месте и времени, согласованном с клиентом');
+                fadeOutAndReplace(thirdText, 'Передайте посылку', 'Передайте посылку в согласованное с клиентом место и время');
+                fadeOutAndReplace(forthText, 'Примите запрос', 'Как только кто-то сделает запрос, мы сообщим вам об этом. Вы увидите всю информацию о посылке, включая фотографии. Вам останется только принять его или отклонить');
+                fadeOutAndReplace(fifthText, 'Доберитесь до места назначения', 'Доберитесь до страны назначения');
+                fadeOutAndReplace(sixthText, '', '');
+            } else {
+                fadeOutAndReplace(firstText, 'Create ad', 'Planning a trip? Create ad for it: enter the dates and describe what you can to bring with you');
+                fadeOutAndReplace(secondText, 'Get the parcel', 'Pick up the parcel at the place and time agreed with the customer');
+                fadeOutAndReplace(thirdText, 'Pass the parcel', 'Hand over the parcel at the place and time agreed with the customer');
+                fadeOutAndReplace(forthText, 'Accept the request', 'Once somebody make request we will notify you. You will see all the information about the package, including photos. You just need to accept it or decline');
+                fadeOutAndReplace(fifthText, 'Get to the destination', 'Get to the destination country');
+                fadeOutAndReplace(sixthText, '', '');
+            }
+
             firstText.style.display = 'block';
             secondText.style.display = 'block';
             thirdText.style.display = 'block';
@@ -275,13 +287,22 @@
             processStepsIcon.style.opacity = '1';
             
             processSteps5Icon.style.opacity = '0';
-
-            fadeOutAndReplace(firstText, 'Find suitable courier', 'Enter source and destination place. Then choose ad with suitable date');
-            fadeOutAndReplace(secondText, 'Pay the order', 'Wait until courier accepts your request and pay for it. We will keep money safe until you successfully receive your package');
-            fadeOutAndReplace(thirdText, 'Pass the parcel', 'Pass the parcel at the place and time agreed with client');
-            fadeOutAndReplace(forthText, 'Create delivery request', 'Describe what you want to send, attach photo of it and add contacts of package transmitting and receiving side');
-            fadeOutAndReplace(fifthText, 'Contact with courier', 'Contact with courier via application and agree on the details');
-            fadeOutAndReplace(sixthText, 'Receive parcel', 'Receive the parcel at the place and time agreed with courier. Confirm receiving parcel in the app, so we can pass money to curier');
+            if (langSwitch.checked) {
+                fadeOutAndReplace(firstText, 'Найдите подходящего курьера', 'Введите начальный и конечный пункты. Затем выберите объявление с подходящей датой');
+                fadeOutAndReplace(secondText, 'Оплатите заказ', 'Дождитесь, пока курьер примет ваш запрос, и оплатите его. Мы будем хранить деньги до тех пор, пока вы не получите посылку');
+                fadeOutAndReplace(thirdText, 'Передайте посылку', 'Передайте посылку в согласованное с клиентом место и время');
+                fadeOutAndReplace(forthText, 'Создайте запрос на доставку', 'Опишите, что вы хотите отправить. Прикрепите фотографию и добавьте контактные данные отправителя и получателя');
+                fadeOutAndReplace(fifthText, 'Свяжитесь с курьером', 'Свяжитесь с курьером через приложение и согласуйте детали');
+                fadeOutAndReplace(sixthText, 'Получите посылку', 'Получите посылку в месте и времени, согласованном с курьером. Подтвердите получение посылки в приложении, чтобы мы могли перевести деньги курьеру');
+            } else {
+                fadeOutAndReplace(firstText, 'Find suitable courier', 'Enter start and destination. Then select display with suitable date');
+                fadeOutAndReplace(secondText, 'Pay the order', 'Wait until courier accepts your request and pay for it. We will keep money safe until you successfully receive your package');
+                fadeOutAndReplace(thirdText, 'Pass the parcel', 'Hand over the parcel at the place and time agreed with the courier');
+                fadeOutAndReplace(forthText, 'Create delivery request', 'Describe what you want to send. Attach a photo of it and add the contact details of the sender and recipient');
+                fadeOutAndReplace(fifthText, 'Contact the courier', 'Contact courier via application and agree details');
+                fadeOutAndReplace(sixthText, 'Receive the parcel', 'Receive the parcel at the location and time agreed with the courier. Confirm receipt of parcel in the app so we can transfer money to courier');
+            }
+            
             firstText.style.display = 'block';
             secondText.style.display = 'block';
             thirdText.style.display = 'block';
@@ -309,11 +330,9 @@
         if (isValidEmail(userEmail.value)) {
             e_alert.style.display = 'none';
             s_alert.style.display = 'flex';
-            // alert("You have been added to the waiting-list");
         } else {
             s_alert.style.display = 'none';
             e_alert.style.display = 'flex';
-            // alert("Please enter the correct email address");
         }
         document.querySelector('.overlay').style.display = 'block';
     });
@@ -322,11 +341,9 @@
         if (isValidEmail(userEmailBtm.value)) {
             e_alert.style.display = 'none';
             s_alert.style.display = 'flex';
-            // alert("You have been added to the waiting-list");
         } else {
             s_alert.style.display = 'none';
             e_alert.style.display = 'flex';
-            // alert("Please enter the correct email address");
         };
 
         document.querySelector('.overlay').style.display = 'block';

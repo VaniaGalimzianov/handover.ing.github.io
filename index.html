@@ -327,9 +327,24 @@
     const joinButtonBtm = document.querySelector('.join-bottom');
 
     joinButton.addEventListener('click', function() {
-        if (isValidEmail(userEmail.value)) {
+        let = emailValue = userEmail.value;
+        if (isValidEmail(emailValue)) {
             e_alert.style.display = 'none';
             s_alert.style.display = 'flex';
+            // Отправка данных на сервер
+            /* fetch('<api>', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: emailValue })
+            })
+            .then(data => {
+                console.log(`Ответ от сервера: ${data}`);
+            })
+            .catch(error => {
+                console.error(`Ошибка со стороны сервера: ${error}`);
+            }); */
         } else {
             s_alert.style.display = 'none';
             e_alert.style.display = 'flex';
@@ -338,9 +353,24 @@
     });
 
     joinButtonBtm.addEventListener('click', function() {
-        if (isValidEmail(userEmailBtm.value)) {
+        let emailValueBtm = userEmailBtm.value;
+        if (isValidEmail(emailValueBtm)) {
             e_alert.style.display = 'none';
             s_alert.style.display = 'flex';
+            // Отправка данных на сервер
+            /* fetch('<api>', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: emailValueBtm })
+            })
+            .then(data => {
+                console.log(`Ответ от сервера: ${data}`);
+            })
+            .catch(error => {
+                console.error(`Ошибка со стороны сервера: ${error}`);
+            }); */
         } else {
             s_alert.style.display = 'none';
             e_alert.style.display = 'flex';

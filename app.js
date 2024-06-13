@@ -10,7 +10,7 @@ langSwitch.addEventListener('click', function() {
             try {
                 document.querySelector('.' +  key).innerHTML = langArr[key]["ru"];
             } catch {
-                console.log("Элемент " + key + " не найден");
+                console.log(`Элемент ${key} не найден`);
             }
         }
     } else {
@@ -18,7 +18,7 @@ langSwitch.addEventListener('click', function() {
             try {
                 document.querySelector('.' +  key).innerHTML = langArr[key]["en"];
             } catch {
-                console.log("Элемент " + key + " не найден");
+                console.log(`Элемент ${key} не найден`);
             }
         }
     }

@@ -274,6 +274,7 @@ input:checked + .slider:before {
     border-radius: 5px;
     padding: 5px;
     margin-right: 2%;
+    padding-left: 5%;
 }
 
 .email-field::placeholder {
